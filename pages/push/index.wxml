@@ -1,0 +1,62 @@
+<!--pages/cart/index.wxml-->
+<view class="topView">
+  <i-row>
+    <i-col span="8" i-class="col-class">
+      <i-button bind:click="upLoadVideo" type="primary">添加视频</i-button>
+    </i-col>
+    <i-col span="8" i-class="col-class">
+      <i-button bind:click="upLoadImg" type="success">添加图片</i-button>
+    </i-col>
+    <i-col span="8" i-class="col-class">
+      <i-button bind:click="upLoadText" type="info">添加文章</i-button>
+    </i-col>
+  </i-row>
+</view>
+<view class="pushMian">
+  <i-row i-class="mianBody" wx:for="{{dataLIst}}">
+    <view wx:if="{{item.type == 0}}"></view>
+    <image wx:elif="{{item.type == 1}}" class='showImg' src="{{item.src}}"></image>
+    <video wx:elif="{{item.type == 2}}" class='mianVideo' src="{{item.src}}"></video>
+  </i-row>
+  <view class='textAreaB' wx:if="{{showText}}">
+    <textarea maxlength="2000" value="{{concent}}"></textarea>
+    <i-row>
+      <i-col offset="12" span="6" i-class="col-class">
+         <i-button bind:click="cancelBoxFunc" type="primary">取消</i-button>
+      </i-col>
+      <i-col span="6" i-class="col-class">
+        <i-button bind:click="sureBoxFunc" type="primary">确定</i-button>
+      </i-col>
+    </i-row>
+  </view>
+
+  <!-- <i-panel i-class="titleStyle" title="添加图片">
+    <view style="padding: 15px;">
+      <i-row>
+        <i-button bind:click="upLoadImg" type="success">上传图片</i-button>
+      </i-row>
+      <i-row>
+        <i-col wx:for="{{tempFilePathArray}}" span="8" i-class="col-class">
+           <image class='showImg' src="{{item}}"></image>
+        </i-col>
+      </i-row>
+    </view>
+  </i-panel>
+  <i-panel i-class="titleStyle" title="添加视频">
+    <view style="padding: 15px;">
+      <i-row>
+        <i-button bind:click="upLoadVideo" type="success">上传视频</i-button>
+      </i-row>
+      <i-row>
+        <video class='mianVideo' wx:if="{{tempFileImg}}" src="{{tempFileImg}}"></video>
+      </i-row>
+    </view>
+  </i-panel>
+  <i-panel i-class="titleStyle" title="编辑文字">
+    <view style="padding: 15px;">
+      <textarea class="font-box"  maxlength="2000"></textarea>
+    </view>
+  </i-panel>
+  <i-button  type="primary" size="large">确认无误，发布文章</i-button> -->
+  <i-message id="message" />
+</view>

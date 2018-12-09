@@ -1,0 +1,34 @@
+.container-class {
+  width: 100%;
+  padding-top: 10rpx;
+}
+
+.list {
+  width: 100%;
+}
+
+.findTitle {
+  margin-left: 5%;
+  font-size: 30rpx;
+  color: #c0c0c0;
+  font-weight: 600;
+}
+
+.list li {
+  font-size: 32rpx;
+  display: block;
+  height: 100rpx;
+  width: 90%;
+  margin-left: 5%;
+  line-height: 136rpx;
+  margin-bottom: 3rpx;
+  border-bottom: 2rpx solid #ccc;
+}
+
+.list li p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 90%;
+  display: block;
+}

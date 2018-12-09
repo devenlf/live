@@ -1,0 +1,7 @@
+<!--pages/my/index.wxml-->
+<view class='page'></view>
+<view class='page_hd'></view>
+<view class="page__bd">
+  <text>{{message}}</text>
+  <button class="weui-btn" bindtap="changeData" type="primary">改变文字</button>
+</view>

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "i-row": "../../dist/row/index",
+    "i-col": "../../dist/col/index",
+    "i-panel": "../../dist/panel/index",
+    "i-button": "../../dist/button/index",
+    "i-action-sheet": "../../dist/action-sheet/index",
+    "i-message": "../../dist/message/index"
+  }
+}

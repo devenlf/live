@@ -1,0 +1,11 @@
+<!--pages/classify/index.wxml-->
+<view class="container-class">
+  <view class='findTitle'>
+    <i-icon type="activity" size="28" color="#80848f" />生活小贴士</view>
+  <ul class="list">
+    <li wx:for="{{listClassDate}}" wx:key="listClassDateId" data-id="{{item.classId}}" bindtap="bindViewTap">
+      <p class="web-font">{{item.classTitle}}</p>
+    </li>
+  </ul>
+  <i-load-more loading="{{ isLoadData }}"/>
+</view>

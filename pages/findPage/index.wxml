@@ -1,0 +1,11 @@
+<!--pages/cart/index.wxml-->
+<view>
+  <i-card title="卡片标题" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+    <view class="mainBox" slot="content">
+      <video wx:if="{{ideaData.videoUrl}}" class="mainVideo" src="{{ideaData.videoUrl}}" binderror="videoErrorCallback"></video>
+      <image class="mianImg" wx:if="{{ideaData.imgArray.length<1}}" wx:for="{{ideaData.imgArray}}" src='{{item}}'></image>
+      <p>{{ideaData.textContent}}</p>
+    </view>
+    <view slot="footer">尾部内容</view>
+  </i-card>
+</view>

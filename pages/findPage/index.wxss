@@ -1,0 +1,18 @@
+/* pages/classpage/index.wxss */
+
+.preview-tips {
+  margin: 20rpx 0;
+}
+
+.mainVideo {
+  padding: 0rpx;
+  width: 100%;
+}
+
+.mianImg {
+  width: 100%;
+}
+
+.mainBox p {
+  display: block;
+}

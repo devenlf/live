@@ -1,0 +1,41 @@
+/* pages/cart/index.wxss */
+
+.font-box {
+  width: 100%;
+  min-height: 377rpx;
+}
+
+.pushMian {
+  padding-top: 120rpx;
+}
+
+.mianBody {
+  width: 94%;
+  margin-left: 3%;
+}
+
+.topView {
+  width: 100%;
+  height: 115rpx;
+  position: fixed;
+  background: #292929;
+}
+
+.col-class {
+  text-align: center;
+}
+
+.showImg {
+  width: 100%;
+}
+
+.mianVideo {
+  width: 100%;
+}
+
+.textAreaB textarea{
+  width: 94%;
+  margin-left: 3%;
+  height: 30vh;
+  border: 1rpx solid #efefef
+}
