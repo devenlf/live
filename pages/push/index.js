@@ -8,24 +8,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showText:false,
+    showText: false,
+    dataIndex: 0,
     dataLIst: [],
-    concent:""
+    titleState: false,
+    currentDeleteIndex: "",
+    concent: "",
+    deleteState: false,
+    titleValue: "",
+    actionsDelete: [{
+      'name': "删除",
+      'color': "#2d8cf0"
+    }, {
+      'name': "取消",
+      'color': "#19be6b"
+    }],
+    actionsTitle: [{
+      'name': "确定",
+      'color': "#2d8cf0"
+    }, {
+      'name': "取消",
+      'color': "#19be6b"
+    }]
     // tempFilePathArray: [],
     // tempFileImg: ""
   },
 
-
   //上传图片
   upLoadImg() {
-    var that = this;
-    // if (that.data.tempFilePathArray.length > 8) {
-    //   $Message({
-    //     content: '最多只能上传九张图片',
-    //     type: 'warning'
-    //   });
-    //   return
-    // }
     wx.chooseImage({
       count: 1,
       sizeType: ['original', 'compressed'],
@@ -38,9 +48,12 @@ Page({
         imgData.src = res.tempFilePaths[0];
         imgData.type = 1;
         that.data.dataLIst.push(imgData)
-        that.setData({
-          dataLIst: that.data.dataLIst
-        })
+        imgData.indexView = that.data.dataIndex;
+        that.data.dataIndex++
+          that.setData({
+            dataLIst: that.data.dataLIst,
+            dataIndex: that.data.dataIndex
+          })
       }
     })
   },
@@ -57,35 +70,111 @@ Page({
         videoData.src = res.tempFilePath;
         videoData.type = 2;
         that.data.dataLIst.push(videoData)
-        that.setData({
-          dataLIst: that.data.dataLIst
-        })
+        videoData.indexView = that.data.dataIndex;
+        that.data.dataIndex++
+          that.setData({
+            dataLIst: that.data.dataLIst,
+            dataIndex: that.data.dataIndex
+          })
       }
     })
   },
 
-  //上传文章
-  upLoadText(){
-    var that = this
+  //得到当前title
+  getTitleValue({
+    detail
+  }) {
     this.setData({
-      showText:true
+      titleValue: detail.detail.value
+    })
+
+  },
+
+  //删除事件
+  deleteView(e) {
+    this.setData({
+      currentDeleteIndex: e.currentTarget.id,
+      deleteState: true
     })
   },
 
-  cancelBoxFunc(){
+  deleteActive({
+    detail
+  }) {
+    var that = this
+    var index = detail.index;
+    if (index === 0) {
+      that.data.dataLIst.forEach(function(item, index) {
+        if (item.indexView == that.data.currentDeleteIndex) {
+          that.data.dataLIst.splice(index, 1)
+        }
+      })
+      this.setData({
+        dataLIst: that.data.dataLIst,
+        deleteState: false
+      })
+      $Message({
+        content: '删除成功'
+      });
+    }
+  },
+
+  //上传文章
+  upLoadText() {
+    var that = this
+    this.setData({
+      showText: true
+    })
+  },
+
+  cancelBoxFunc() {
     this.setData({
       showText: false
     })
   },
 
-  sureBoxFunc(){
-    var that =this
+  sureBoxFunc() {
+    var that = this
     var textData = {};
-    textData.value = that.data.concent;
+    textData.value = that.concent;
     textData.type = 0;
-    console.log(textData)
+    that.data.dataLIst.push(textData)
+    textData.indexView = that.data.dataIndex
+    that.data.dataIndex++
+      that.setData({
+        dataLIst: that.data.dataLIst,
+        dataIndex: that.data.dataIndex
+      })
+    that.cancelBoxFunc()
+  },
+
+  getTextValue(e) {
+    this.concent = e.detail.value;
+  },
+
+  submitValue() {
+    if (!this.data.dataLIst.length) {
+      $Message({
+        content: '请上传内容',
+        type: 'warning'
+      });
+      return
+    }
+    this.setData({
+      titleState: true
+    })
+  },
+
+  submitTitle({
+    detail
+  }) {
+    var that = this
+    var index = detail.index;
+    if (index == 0) {
+      console.log(that.data.titleValue)
+    }
     that.setData({
-      dataLIst: that.data.dataLIst
+      titleState: false
     })
   },
 
@@ -94,7 +183,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-   
+
   },
 
   /**

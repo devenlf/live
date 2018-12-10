@@ -14,6 +14,11 @@
   margin-left: 3%;
 }
 
+.boxView{
+  display:block;
+  white-space: pre-line;
+}
+
 .topView {
   width: 100%;
   height: 115rpx;
@@ -39,3 +44,8 @@
   height: 30vh;
   border: 1rpx solid #efefef
 }
+/* 
+.footerBox{
+  position: fixed;
+  
+} */
