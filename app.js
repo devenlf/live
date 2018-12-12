@@ -1,7 +1,7 @@
 //app.js
 var serverInfo = require('./config.js')
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -10,10 +10,18 @@ App({
     // 登录
     wx.login({
       success: res => {
-        console.log(res)
-        
       }
     })
+
+    wx.checkSession({
+      success:res => {
+        console.log(res)
+      }
+    })
+
+
+
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -33,11 +41,11 @@ App({
       }
     })
   },
-  onShow:function(){
+  onShow: function() {
 
   },
-  onHide:function(){
-    
+  onHide: function() {
+
   },
   globalData: {
     userInfo: null

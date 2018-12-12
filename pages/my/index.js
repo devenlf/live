@@ -13,7 +13,9 @@ Page({
    */
   onLoad: function(options) {
     console.log(options)
+
   },
+  
 
   //改变
   changeData: function() {

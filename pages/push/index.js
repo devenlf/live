@@ -36,6 +36,7 @@ Page({
 
   //上传图片
   upLoadImg() {
+    var that = this;
     wx.chooseImage({
       count: 1,
       sizeType: ['original', 'compressed'],
@@ -87,7 +88,7 @@ Page({
     this.setData({
       titleValue: detail.detail.value
     })
-
+    console.log(this.data.titleValue)
   },
 
   //删除事件
@@ -171,7 +172,10 @@ Page({
     var that = this
     var index = detail.index;
     if (index == 0) {
-      console.log(that.data.titleValue)
+      var currentData = {}
+      currentData.titleValue = that.data.titleValue;
+      currentData.datalist = that.data.dataLIst;
+      console.log(currentData)
     }
     that.setData({
       titleState: false

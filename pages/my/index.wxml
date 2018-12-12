@@ -3,5 +3,6 @@
 <view class='page_hd'></view>
 <view class="page__bd">
   <text>{{message}}</text>
+  <map></map>
   <button class="weui-btn" bindtap="changeData" type="primary">改变文字</button>
 </view>
