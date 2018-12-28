@@ -1,1 +1,9 @@
 /* pages/my/index.wxss */
+.findTitle {
+  margin-left: 5%;
+  font-size: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #c0c0c0;
+  font-weight: 600;
+}

@@ -1,8 +1,5 @@
 <!--pages/my/index.wxml-->
-<view class='page'></view>
-<view class='page_hd'></view>
-<view class="page__bd">
-  <text>{{message}}</text>
-  <map></map>
-  <button class="weui-btn" bindtap="changeData" type="primary">改变文字</button>
+<view class='page_my'>
+  <view class='findTitle'>
+    <i-icon type="businesscard" size="30" color="#80848f" />  我的名片</view>
 </view>

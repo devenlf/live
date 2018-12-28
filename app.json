@@ -5,7 +5,8 @@
     "pages/logs/logs",
     "pages/my/index",
     "pages/pushPage/index",
-    "pages/findPage/index"
+    "pages/findPage/index",
+    "pages/informationpage/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

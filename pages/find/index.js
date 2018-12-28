@@ -5,7 +5,7 @@ Page({
    */
   data: {
     listClassDate: [
-      
+      { classTitle:"案说法大苏打大苏打"}
     ],
     isLoadData: true
   },
