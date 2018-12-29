@@ -175,7 +175,7 @@ Page({
       var currentData = {}
       currentData.titleValue = that.data.titleValue;
       currentData.datalist = that.data.dataLIst;
-      console.log(currentData)
+      
     }
     that.setData({
       titleState: false

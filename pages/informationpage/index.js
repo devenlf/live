@@ -15,6 +15,7 @@ Page({
     visibleSex: false,
     valueSex: '男',
     valueNickname: '',
+    valuePhone:'',
     valuehobby: '吃瓜',
     actionsSex: [{
         name: '男',
@@ -44,11 +45,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-    var that = this
-    console.log(that.app.globalData.userInfo)
-    that.setData({
-      valueNickname: that.app.globalData.userInfo.nickName
-    })
   },
 
   /**
@@ -135,12 +131,11 @@ Page({
   submitRegistered: function() {
     var that = this;
     var dataSubmit = {};
-    dataSubmit.naickName = that.data.valueNickname;
     dataSubmit.hobby = that.data.valuehobby;
     dataSubmit.age = that.data.valueAge;
     dataSubmit.sex = that.data.valueSex;
+    dataSubmit.phone = that.data.valuePhone
     dataSubmit.id = that.app.globalData.openId;
-    console.log(dataSubmit);
     wx.request({
       url: 'http://localhost:3000/users/newUser',
       data: dataSubmit,

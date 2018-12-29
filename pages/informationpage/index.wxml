@@ -1,9 +1,9 @@
 <!--pages/information/index.wxml-->
 <view class='viewRegistered'>
   <i-panel title="基础用法">
-    <i-input value="{{ valueNickname }}" title="昵称" autofocus/>
     <i-input value="{{ valuehobby }}" title="爱好" autofocus />
     <i-input type="number" value="{{ valueAge }}" title="年龄" autofocus />
+    <i-input type="number" value="{{ valuePhone }}" title="手机号" autofocus />
     <i-input bind:focus="changeSexFunction" value="{{ valueSex }}" title="性别" />
   </i-panel>
 </view>

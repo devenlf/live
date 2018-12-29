@@ -1,6 +1,36 @@
 <!--pages/my/index.wxml-->
 <view class='page_my'>
   <view class='findTitle'>
-    <i-icon type="businesscard" size="30" color="#80848f" />  我的名片</view>
-    
+    <i-icon type="businesscard" size="30" color="#80848f" /> 我的名片
+  </view>
+  <view class="my_card">
+      <i-row class="name">
+        <i-col span="8" class="valueTxt">姓名</i-col>
+        <i-col span="16" class="valueInfo">{{nameUser}}</i-col>
+      </i-row>
+      <i-row class="name">
+        <i-col span="8" class="valueTxt">头像</i-col>
+        <i-col span="16" class="valueInfo"><image src="{{namePhoto}}"></image></i-col>
+      </i-row>
+      <i-row class="name">
+        <i-col span="8" class="valueTxt">性别</i-col>
+        <i-col span="16" class="valueInfo">{{sex}}</i-col>
+      </i-row>
+      <i-row class="name">
+        <i-col span="8" class="valueTxt">爱好</i-col>
+        <i-col span="16" class="valueInfo">{{hobby}}</i-col>
+      </i-row>
+      <i-row class="name">
+        <i-col span="8" class="valueTxt">等级</i-col>
+        <i-col span="16" class="valueInfo">{{level}}</i-col>
+      </i-row>
+      <i-row class="name">
+        <i-col span="8" class="valueTxt">年龄</i-col>
+        <i-col span="16" class="valueInfo">{{age}}</i-col>
+      </i-row>
+      <i-row class="name">
+        <i-col span="8" class="valueTxt">手机</i-col>
+        <i-col span="16" class="valueInfo">{{phone}}</i-col>
+      </i-row>
+  </view>
 </view>

@@ -1,7 +1,7 @@
 /* pages/information/index.wxss */
 
 .registered {
-  margin-top: 60vh;
+  margin-top: 54vh;
   display: block;
 }
 
