@@ -2,4 +2,5 @@
 <view class='page_my'>
   <view class='findTitle'>
     <i-icon type="businesscard" size="30" color="#80848f" />  我的名片</view>
+    
 </view>

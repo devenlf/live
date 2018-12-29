@@ -1,0 +1,11 @@
+/* pages/information/index.wxss */
+
+.registered {
+  margin-top: 60vh;
+  display: block;
+}
+
+.viewRegistered {
+  margin: 0px;
+  padding: 0px;
+}
