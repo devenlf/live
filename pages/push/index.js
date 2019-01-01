@@ -166,6 +166,8 @@ Page({
     })
   },
 
+
+//提交上传
   submitTitle({
     detail
   }) {
@@ -175,8 +177,32 @@ Page({
       var currentData = {}
       currentData.titleValue = that.data.titleValue;
       currentData.datalist = that.data.dataLIst;
-      
+      currentData.openId = that.app.globalData.openId;
+      currentData.avatarUrl = that.app.globalData.userInfo.avatarUrl;
+      currentData.nickName = that.app.globalData.userInfo.nickName;
+      console.log(currentData)
+      //提交数据
+      wx.request({
+        url: 'http://localhost:3000/postFile/saveFabu',
+        data: currentData,
+        method:'post',
+        success: function (data) {
+          if (data.data.success) {
+            $Message({
+              content: data.data.message
+            });
+            setTimeout(function () {
+              wx.switchTab({
+                url: '../find/index'
+              })
+              console.log(12313)
+            }, 1000)
+          }
+        }
+      })
+      console.log(that.app.globalData.openId, that.app.globalData.userInfo.avatarUrl, that.app.globalData.userInfo.nickName)
     }
+   
     that.setData({
       titleState: false
     })
@@ -187,7 +213,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    this.app = getApp()
   },
 
   /**
